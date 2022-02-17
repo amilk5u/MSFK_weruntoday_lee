@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>We RUN Today | 2022 CAMPAIGN </title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="Description" content="국경없는의사회 2022 캠페인">
+	<meta name="Keywords" content="국경없는의사회,국경없는의사회한국,캠페인,MSFK,후원하기,후원캠페인,김지민, 최용준, 이효민,구호활동가,We Run Today">
+	<meta name="Author" content="국경없는의사회">
+	<meta name="robots" content="ALL">
+	<meta name="format-detection" content="telephone=no" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="국경없는의사회 | We RUN Today">
+	<meta property="og:description" content="우리는 오늘도 환자를 치료합니다">
+	<meta property="og:image" content="https://msf.or.kr/campaigns/weruntoday_yongjoon/images/common/og_banner.jpg">
+	<meta property="og:site_name" content="국경없는의사회">
+	<link rel="shortcut icon" href="https://msf.or.kr/sites/default/files/favicon.png" type="image/png"/>
+	<link rel="stylesheet" href="./stylesheets/css/common.css">
+	<script src="./javascripts/jquery-1.8.2.min.js"></script>
+
+	<!--후원하기 클릭시 utm물고 가는 코드-->
+	<script>
+		$(function(){
+			var locationUrl= window.location.href;
+			$(".donate_utm_link").each(function(){
+				var $donationBtn = $(this).attr("href");
+				var _defaultUtm = $donationBtn.match(/\?/);
+				var _utmSource = URLParser(locationUrl).getParam('utm_source'),
+						_utmMedium = URLParser(locationUrl).getParam('utm_medium'),
+						_utmTerm = URLParser(locationUrl).getParam('utm_term'),
+						_utmContent = URLParser(locationUrl).getParam('utm_content'),
+						_utmCampaign = URLParser(locationUrl).getParam('utm_campaign');
+
+				if(!_utmSource) _utmSource="";
+				if(!_utmMedium) _utmMedium="";
+				if(!_utmTerm) _utmTerm="";
+				if(!_utmContent) _utmContent="";
+				if(!_utmCampaign) _utmCampaign="";
+
+				var utmArr = ["utm_source="+_utmSource, "&utm_medium="+_utmMedium, "&utm_term="+_utmTerm, "&utm_content="+_utmContent, "&utm_campaign="+_utmCampaign];
+				var DONUS_utmURL = "";
+				if(_defaultUtm){
+					DONUS_utmURL = $donationBtn+"&"+utmArr[0]+utmArr[1]+utmArr[2]+utmArr[3]+utmArr[4];
+				}else{
+					DONUS_utmURL = $donationBtn+"?"+utmArr[0]+utmArr[1]+utmArr[2]+utmArr[3]+utmArr[4];
+				}
+
+				$(this).attr("href", DONUS_utmURL);
+				if($(this).attr("target")){
+					$(this).attr("target","_self");
+				}
+			})
+		});
+		function URLParser(u) {var path = "", query = "", hash = "", params;if (u.indexOf("#") > 0) {hash = u.substr(u.indexOf("#") + 1);u = u.substr(0, u.indexOf("#"));}if (u.indexOf("?") > 0) {path = u.substr(0, u.indexOf("?"));query = u.substr(u.indexOf("?") + 1);params = query.split('&');} else path = u;return {getHost: function () {var hostexp = /\/\/([\w.-]*)/;var match = hostexp.exec(path);if (match != null && match.length > 1) return match[1];return "";}, getPath: function () {var pathexp = /\/\/[\w.-]*(?:\/([^?]*))/;var match = pathexp.exec(path);if (match != null && match.length > 1) return match[1];return "";}, getHash: function () {return hash;}, getParams: function () {return params}, getQuery: function () {return query;}, setHash: function (value) {if (query.length > 0) query = "?" + query;if (value.length > 0) query = query + "#" + value;return path + query;}, setParam: function (name, value) {if (!params) {params = new Array();}params.push(name + '=' + value);for (var i = 0; i < params.length; i++) {if (query.length > 0) query += "&";query += params[i];}if (query.length > 0) query = "?" + query;if (hash.length > 0) query = query + "#" + hash;return path + query;}, getParam: function (name) {if (params) {for (var i = 0; i < params.length; i++) {var pair = params[i].split('=');if (decodeURIComponent(pair[0]) == name) return decodeURIComponent(pair[1]);}}/* console.log('Query variable %s not found', name);*/}, hasParam: function (name) {if (params) {for (var i = 0; i < params.length; i++) {var pair = params[i].split('=');if (decodeURIComponent(pair[0]) == name) return true;}}/* console.log('Query variable %s not found', name);*/}, removeParam: function (name) {query = "";if (params) {var newparams = new Array();for (var i = 0; i < params.length; i++) {var pair = params[i].split('=');if (decodeURIComponent(pair[0]) != name) newparams.push(params[i]);}params = newparams;for (var i = 0; i < params.length; i++) {if (query.length > 0) query += "&";query += params[i];}}if (query.length > 0) query = "?" + query;if (hash.length > 0) query = query + "#" + hash;return path + query;},}};
+	</script>
+	<!--//후원하기 클릭시 utm물고 가는 코드-->
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+					  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PCTTRC7');
+	</script>
+	<!-- End Google Tag Manager -->
+</head>
+<body>
+<!--<div class="top"></div>-->
+<div id="wrap">
+	<!--header-->
+	<header>
+		<h1 id="logo">
+			<a href="https://msf.or.kr/"></a>
+		</h1>
+	</header>
+	<!--//header-->

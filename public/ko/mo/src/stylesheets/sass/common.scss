@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import "./_common/base";
+@import "./layout";
+@import "./main";
+
+/* common css */
+//기본 스타일
+::selection { background:#ccc; color:$black; text-shadow:none; }
+::-moz-selection { background:#ccc; color:$black; text-shadow:none; }
+img { vertical-align:top; image-rendering:-webkit-optimize-contrast;}
+caption { width:1px; height:1px; overflow:hidden; margin:-1px;}
+
+//hidden text
+.hidden-txt,
+legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9999px; line-height:1px; position:absolute;}
+
+.guide_line {
+	&:before,
+	&:after {width:1px; height:100vh; display:block; content:""; position:fixed; background-color:$red; opacity:.8; z-index:1000;}
+	&:before {left:em(40);}
+	&:after {right:em(40);}
+	.guide_center {width:1px; height:100vh; display:block; content:""; position:fixed; background-color:$red; opacity:.8; left:50%; z-index:1000;}
+}

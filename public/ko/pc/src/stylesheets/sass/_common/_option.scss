@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* Font style setting */
+$omni:"omnigothic", Arial, Apple SD Gothic Neo, sans-serif;
+$synco:"Syncopate", Arial, Apple SD Gothic Neo, sans-serif;
+$dream:"S Core", Arial, Apple SD Gothic Neo, sans-serif;
+
+/* Point color setting */
+$black:#000;
+$white:#fff;
+$yellow:#ffc000;
+$red:#ee0000;
+$orange:#ff7200;
+
+
+$gray1:#292a2f;
+$gray2:#646566;
+$gray3:#0f0f10;
+
+/* Background - color setting */
+$bg-black:$black;
+$bg-gray1:$gray1;
+$bg-gray2:$gray2;
+
+/* Border - color setting */
+$bd-black:$black;
+$bd-gray1:$gray1;
+$bd-gray2:$gray2;
+
+/* Font - color setting */
+$txt-black:$black;
+$txt-gray1:$gray1;
+$txt-gray2:$gray2;
+
+/* Input - color setting */
+$inp-bd-base:$gray1;
+
+/* Button - color setting */
+$btn-black:$black;
+
+/**
+ * BASE SETTING
+ */
+$base-font:"omnigothic", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
+$base-font-size:20px;
+$base-font-color:$gray1;
+
+$letter-spacing:-1px;
+
+$light:300;
+$regular:400;
+$bold:700;
+

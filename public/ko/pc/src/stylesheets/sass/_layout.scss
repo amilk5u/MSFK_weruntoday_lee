@@ -1,0 +1,90 @@
+@charset "UTF-8";
+header {
+    width:100%; position:fixed; z-index:50; top:40px; padding:0 60px;
+    @include boxSizing;
+    h1 {
+        float:left;
+        a {
+            width:198px; height:61px; display:block; background-image:url(../../images/layout/logo.png);
+            @include backgroundSolt(0, 0);
+            @include transition(background-image, .2s);
+            &.logo_black {background-image:url(../../images/layout/logo_black.png);}
+        }
+    }
+    .donate_btn {
+        a {
+            width:180px; height:60px; float:right; background-color:$red; color:$white; display:block; text-align:center; font-size:18px;
+            line-height:60px;
+            @include transition;
+            @include borderRadius(7px);
+            &:hover {
+                @include boxShadow(0px 5px 10px -5px rgba(161,69,69, 1));
+            }
+        }
+    }
+}
+
+footer {
+    width:100%; height:181px; background-color:#202529; letter-spacing:normal; font-style:normal; min-width:1400px;
+    .footer {
+        width:1240px; margin:0 auto;
+        & > div {
+            .contain {
+                width:85%; min-width:1220px; margin:0 auto;
+                @include boxSizing;
+            }
+        }
+        .fc1 {
+            .contain {
+                height:87px; border-bottom:1px solid rgba(255, 255, 255, 0.1);
+                .logo_footer {
+                    width:140px; float:left; padding:20px 0 0; margin:0 45px 0 0; text-align:left;
+                    a { display:block; }
+                    img { width:100%; }
+                }
+                ul.footer_menu {
+                    float:left; padding:35px 0 31px;
+                    li {
+                        height:100%; display:inline-block; padding:0 15px; color:#c5c5c5;
+                        a:hover { border-bottom:2px solid #ed1c24; }
+                        a:link, a:visited { padding:0 0 10px; font-size:14px; font-weight:300; color:#e8e8e8; }
+                    }
+                }
+                .donate_info {
+                    height:100%; float:right;
+                    @extend %clearfix;
+                    dl {
+                        float:left; padding:32px 0 10px 16px;
+                        &:first-child { padding-right:18px; }
+                        &.account {
+                            position:relative;
+                            &:after { width:1px; height:11px; content:""; display:block; position:absolute; left:0; top:39px; background-color:#474b4e; }
+                        }
+                        dt { display:inline-block; font-weight:$light; font-size:15px; color:#ffe043; margin-right:10px; }
+                        dd { display:inline-block; font-weight:$light; font-size:15px; color:#fff; }
+                    }
+                }
+            }
+        }
+        .fc2 {
+            .address {
+                height:100%; float:left; padding:45px 0 0; font-size:13px; color:#90929b;
+                span {
+                    margin:0 0 0 13px; font-weight:$regular;
+                    &:first-child { margin:0; }
+                }
+            }
+            .donate_btn {
+                float:right; padding:25px 0 0;
+                a {
+                    width:150px; padding:15px 0; display:inline-block; background-color:$red; color:#fff; font-size:16px; letter-spacing:-0.3px;
+                    border-radius:5px; text-align:center; transition:box-shadow .2s ease; font-style:normal; border:2px solid $red;
+                    @include boxSizing;
+                    @include transition(all, .3s);
+                    @include borderRadius(10px);
+                }
+            }
+        }
+    }
+}
+
